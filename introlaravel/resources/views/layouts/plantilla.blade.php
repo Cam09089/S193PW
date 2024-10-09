@@ -8,7 +8,7 @@
 
     @vite(['resources/js/app.js'])
 
-    <title>Plantilla</title>
+    <title> @yield('titulo')</title>
 </head>
 <body>
 {{-- inicia navbar --}}
