@@ -24,10 +24,10 @@
             <a class="nav-link" aria-current="page" href="{{ route('rutainicio') }}" >Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('rutaform') }}" >Registro Clientes</a>
+            <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}" href="{{ route('rutaform') }}" >Registro Clientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('rutaclientes') }}">Consulta Clientes</a>
+            <a class="nav-link {{ request()->routeIs('rutaclientes')?'text-warning':'' }}" href="{{ route('rutaclientes') }}">Consulta Clientes</a>
           </li>
         </ul>
       </div>
