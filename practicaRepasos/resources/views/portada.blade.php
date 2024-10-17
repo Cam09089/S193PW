@@ -44,6 +44,16 @@
         <p>Edad: 20</p>
         <p>Correo: 122042654@upq.edu.mx</p>
         <p>Domicilio: Pedro Escobedo</p>
+        
     </div>
+    <div class="text-center my-4">
+        <img src="{{ asset('img/camm.jpg') }}" alt="yo" width="400">
+
+    </div>
+    <div class="text-center my-4" >
+    <a href="{{ route('repaso') }}" class="btn btn-secundary">REPASO 1</a>
+
+    </div>
+    
 </body>
 </html>
