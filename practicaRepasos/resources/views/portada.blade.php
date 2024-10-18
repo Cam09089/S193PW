@@ -4,36 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portada</title>
-    
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @vite(['resources/js/app.js'])
 
-    <style>
-        body {
-            background-color: #ffe4e1; 
-            color: #333;
-        }
 
-        h1 {
-            color: #ff69b4; 
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        .container {
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #ff1493; 
-        }
-
-       
-
-    </style>
 </head>
 <body>
     <div class="container text-center mt-5">
