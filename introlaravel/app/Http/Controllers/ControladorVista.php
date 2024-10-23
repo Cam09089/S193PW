@@ -19,10 +19,29 @@ class ControladorVista extends Controller
     {
         return view('clientes');
     }
+
     public function procesarCliente(Request $peticion)
     {
         //return 'si llego la info del cliente :(';
         //mostramos todo lo que trae la ppeticion
-        return $peticion->ip();
+       // return $peticion->ip();
+
+        //respuestas de redireccion
+       // return redirect('/');
+
+       //redireccion usando el nombre de la ruta
+      // return redirect()->route('rutaclientes');
+
+       //redireccion al origen de la peticion
+      // return back();
+
+     // $id= [['usuario'=>1],['usuario'=>2]];
+
+      //return view('formulario',compact('id'));
+
+      $usuario = $peticion->input('txtnombre');
+        session()->flash('exito','Se guardo el usuario: '.$usuario);
+
+        return to_route('rutaform');
     }
 }
