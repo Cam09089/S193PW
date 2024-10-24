@@ -39,7 +39,16 @@ class ControladorVista extends Controller
 
       //return view('formulario',compact('id'));
 
-      $usuario = $peticion->input('txtnombre');
+
+      $validacion= $peticion->validate([
+        'txtnombre'=> 'required|min:4 |max:20 ',
+        'txtapellido'=> 'required',
+        'txtcorreo'=> 'required',
+        'txttelefono'=> 'required|numeric'
+      ]);
+
+      //redireccion con un mensaje flash
+        $usuario = $peticion->input('txtnombre');
         session()->flash('exito','Se guardo el usuario: '.$usuario);
 
         return to_route('rutaform');
