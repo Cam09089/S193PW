@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorCliente;
 
 class ControladorVista extends Controller
 {
@@ -20,7 +21,7 @@ class ControladorVista extends Controller
         return view('clientes');
     }
 
-    public function procesarCliente(Request $peticion)
+    public function procesarCliente(validadorCliente $peticion)
     {
         //return 'si llego la info del cliente :(';
         //mostramos todo lo que trae la ppeticion
@@ -40,12 +41,12 @@ class ControladorVista extends Controller
       //return view('formulario',compact('id'));
 
 
-      $validacion= $peticion->validate([
-        'txtnombre'=> 'required|min:4 |max:20 ',
-        'txtapellido'=> 'required',
-        'txtcorreo'=> 'required',
-        'txttelefono'=> 'required|numeric'
-      ]);
+      //$validacion= $peticion->validate([
+        //'txtnombre'=> 'required|min:4 |max:20 ',
+        //'txtapellido'=> 'required',
+        //'txtcorreo'=> 'required',
+        //'txttelefono'=> 'required|numeric'
+      //]);
 
       //redireccion con un mensaje flash
         $usuario = $peticion->input('txtnombre');
