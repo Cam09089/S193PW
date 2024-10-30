@@ -20,11 +20,11 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
 
-        <h1 class="display-1">Bienvenido Turista!</h1>
-        <p>Presiona el boton para iniciar..</p>
+        <h1 class="display-1">{{__('Bienvenido Turista!')}}</h1>
+        <p>{{__('Presiona el boton para iniciar..')}}</p>
 
       <!--  <a href="/form" class="btn btn-primary">Ir al Registro </a> -->
-       <a href="{{ route('rutaform') }}" class="btn btn-primary">Ir al Registro </a>
+       <a href="{{ route('rutaform') }}" class="btn btn-primary">{{__('Ir al Registro')}} </a>
     
 </body>
 </html>
