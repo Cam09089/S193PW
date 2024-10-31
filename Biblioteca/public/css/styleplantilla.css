@@ -1,0 +1,19 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #686356;
+    color: #333;
+}
+.navar{
+    background-color: #9093b7;
+    border-bottom: 2px solid #ca9191;
+}
+.navar-brand, .navar-link{
+    color: bisque;
+}
+.nav-link.active {
+    font-weight: bold;
+    color: #686356 !important;
+}
+.container{
+    margin-top: 20px;
+}

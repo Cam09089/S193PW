@@ -25,7 +25,7 @@
 
     </div>
     <div class="text-center my-4" >
-    <a href="{{ route('repaso') }}" class="btn btn-secundary">REPASO 1</a>xg
+    <a href="{{ route('repaso') }}" class="btn btn-secundary">REPASO 1</a>
 
     </div>
     

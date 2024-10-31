@@ -1,0 +1,58 @@
+body {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkdLsOMt8ea0orA7A7cHOxgt-JGgNmSLAehw&s);
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+.full-height{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+h1{
+    color: #5a3e36;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0.3);
+}
+p{
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #5d382b;
+    border-color: #3c302c;
+    transition: all;
+}
+
+.btn-custom:hover{
+    background-color: #6d4c41;
+    color: #fff;
+}
+
+.noti-section{
+    background-color: #fff7e6;
+    background-position: center;
+    border-top: 2px solid #4a3c31; 
+    border-bottom: 2px solid #4a3c31;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+}
+.noti-titulo{
+    color: #4a3c31;
+    font-weight: bold;
+    font-size: x-large;
+}
+.noti-content{
+    font-size: xx-large;
+    color: #090909;
+    margin-top: auto;
+}
+
+.footer{
+    
+    color: #d6c7b2;
+    text-align: center;
+
+}

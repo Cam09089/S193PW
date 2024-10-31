@@ -1,0 +1,35 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: beige;
+    
+}
+.container{
+    max-width: fit-content;
+    padding: 5rem;
+    background-color: #d2d5cde3;
+    border-radius: 9px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+.btn-primary{
+    background-color: rgb(132, 177, 228);
+    border: #111111e3;
+    color: #030303;
+    border-radius: 5px;
+    background-position: center;
+}
+.footer {
+    background-color: #f1f1f1;
+    padding: 1rem;
+    color: #555;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+}
+
+.footer .library-name {
+    font-weight: bold;
+}
+
+.footer p {
+    margin: 0.2rem 0;
+}
+
