@@ -1,9 +1,9 @@
 @extends('layouts.plantilla')
 
-@section('titulo' 'Componentes Blade')
+@section('titulo','Inicio')
 
 @section('contenido')
 
-<x-Alert tipo="danger"> Rojo </x-Alert>
+<x-Alert tipo="danger"> se envio correctamente </x-Alert>
 
 @endsection

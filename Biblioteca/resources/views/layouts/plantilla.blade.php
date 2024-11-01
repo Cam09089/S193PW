@@ -21,10 +21,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('rutainicio') }}">Inicio</a>
+          <a class="nav-link {{ request()->routeIs('rutainicio')?'text-warning':'' }}" aria-current="page" href="{{ route('rutainicio') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('rutaregistrolibro') }}">Registro De Libro</a>
+          <a class="nav-link {{ request()->routeIs('rutaregistrolibro')?'text-warning':'' }}" href="{{ route('rutaregistrolibro') }}">Registro De Libro</a>
         </li>
       </ul>
     </div>
@@ -32,6 +32,7 @@
   </div>
 </nav>
 {{-- Finaliza navbar --}}
+
     @yield('contenido')
 </body>
 </html>

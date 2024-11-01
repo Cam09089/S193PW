@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+use App\Http\Requests\validadorLibro;
+
 class ControladorVista extends Controller
 {
   
@@ -17,9 +20,23 @@ class ControladorVista extends Controller
         return view('registrolibro');
     }
     
-    public function procesardatos(Request $peticion){
+    public function procesardatos(validadorLibro $peticion){
         //return 'Si se guardaro los datos';
-        return $peticion->all();
+       // return $peticion->all();
+       //return redirect()->route('rutaregistrolibro');
+
+       //return back();
+
+       //arreglos
+       //$id= [['libro'=>1], ['libro'=>2]];
+
+       //ruta
+      // return view('formulario',compact('id'));
+
+      $libro = $peticion->input('txtisbn');
+      session()->flash('exito','Se guardo el libro correctamente:'.$libro);
+      return to_route('rutaregistrolibro');
+
     }
 
    
