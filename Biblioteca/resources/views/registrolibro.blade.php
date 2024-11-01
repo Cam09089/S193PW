@@ -6,13 +6,17 @@
 <link rel="stylesheet" href="{{ asset('css/styleregistro.css') }}">
 
 <div class="container mt-5">
+    @if(session('exito'))
+    <x-Alert tipo="success">{{session('exito')}}</x-Alert>
+    @endif
     <h2 class="text-center mb-4">Registro</h2>
 
     <div>
        
         <div>
 
-<form>
+<form action="enviardatos" method="POST">
+    @csrf
      <div class="mb-3">
     <label for="isbn" class="form-label">ISBN</label>
     <input type="text" class="form-control" name="txtisbn">
@@ -49,7 +53,7 @@
     </div>
 
     <div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
      
 </form>

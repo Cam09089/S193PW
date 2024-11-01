@@ -16,6 +16,11 @@ class ControladorVista extends Controller
     {
         return view('registrolibro');
     }
+    
+    public function procesardatos(Request $peticion){
+        //return 'Si se guardaro los datos';
+        return $peticion->all();
+    }
 
    
 }
