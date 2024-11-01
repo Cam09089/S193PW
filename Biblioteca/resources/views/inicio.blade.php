@@ -14,7 +14,7 @@
 
     <p>Presiona para comenzar el registro</p>
 
-    <a href="/registrolibro" class="btn btn-custom btn-lg mt-3">Ir al registro</a>
+    <a href="{{ route('rutaregistrolibro') }}" class="btn btn-custom btn-lg mt-3">Ir al registro</a>
     </div>
 
   <center> <div class="noti-section mt-4">

@@ -9,6 +9,7 @@
     <h2 class="text-center mb-4">Registro</h2>
 
     <div>
+       
         <div>
 
 <form>

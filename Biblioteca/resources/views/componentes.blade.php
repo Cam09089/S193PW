@@ -4,4 +4,6 @@
 
 @section('contenido')
 
+<x-Alert tipo="danger"> Rojo </x-Alert>
+
 @endsection
