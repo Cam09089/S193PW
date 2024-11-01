@@ -28,7 +28,7 @@ class validadorLibro extends FormRequest
                 'txttitulo'=>'required|string|max:150',
                 'txtautor'=>'required|string|max:100',
                 'txtpaginas'=>'required|integer|min:1',
-                'txtanio'=>'required|integer|between:1000'.date('Y'),
+                'txtanio'=>'required|integer|between:1000,2024',
                 'txteditorial'=>'required|string|max:100',
                 'txtcorreo'=>'required|email'
               ];

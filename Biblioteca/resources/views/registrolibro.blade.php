@@ -14,8 +14,8 @@
 
         <script>
             Swal.fire({
-                title: 'Respuesta del servidor',
-                text: "{{ session('exito') }}",
+                title: 'Todo correcto',
+                text: "Libro '{{ session('exito') }}' guardado",
                 icon: "success"
             });
         </script>
