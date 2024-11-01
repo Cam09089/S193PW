@@ -24,13 +24,13 @@ class validadorLibro extends FormRequest
     {
         return [
             
-                'txtisbn'=>'required',
-                'txttitulo'=>'required',
-                'txtautor'=>'required',
-                'txtpaginas'=>'required',
-                'txtanio'=>'required',
-                'txteditorial'=>'required',
-                'txtcorreo'=>'required'
+                'txtisbn'=>'required|numeric|digits: 13',
+                'txttitulo'=>'required|string|max:150',
+                'txtautor'=>'required|string|max:100',
+                'txtpaginas'=>'required|integer|min:1',
+                'txtanio'=>'required|integer|between:1000'.date('Y'),
+                'txteditorial'=>'required|string|max:100',
+                'txtcorreo'=>'required|email'
               ];
     }
 }
