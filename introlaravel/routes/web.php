@@ -31,3 +31,7 @@ Route::post('/enviarCliente', [ControladorVista::class, 'procesarCliente'])->nam
 
 // rutas
 Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaform');
+/* metodo post */
+Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
+
+Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');

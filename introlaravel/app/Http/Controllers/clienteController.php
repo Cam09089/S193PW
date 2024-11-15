@@ -5,19 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Http\Requests\validadorCliente;
 
 class clienteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * AQUI VA LA CONSULTA DE TODO EL CRUD
      */
     public function index()
     {
-        //
+        $consultaclientes= DB::table('clientes')->get();
+        return view('clientes',compact('consultaclientes'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * LO USAMOS PARA ABRIR EL FORMULARIO DEL CRUD
      */
     public function create()
     {
@@ -27,7 +29,7 @@ class clienteController extends Controller
     /**
      * aqui va el insert
      */
-    public function store(Request $request)
+    public function store(validadorCliente $request)
     {
         DB::table('clientes')->insert([
             "nombre"=>$request->input('txtnombre'),
@@ -35,8 +37,12 @@ class clienteController extends Controller
             "correo"=>$request->input('txtcorreo'),
             "telefono"=>$request->input('txttelefono'),
             "created_at"=> Carbon::now(),
-            "update_at"=> Carbon::now()
+            "updated_at"=> Carbon::now(),
         ]);
+
+        $usuario = $request->input('txtnombre');
+        session()->flash('exito','Se guardo el usuario: '.$usuario);
+        return to_route('rutaform');
     }
 
     /**
