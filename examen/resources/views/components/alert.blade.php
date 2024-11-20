@@ -1,3 +1,5 @@
-<div>
-    <!-- It is quality rather than quantity that matters. - Lucius Annaeus Seneca -->
+<div class="mb-3">
+    <div class="alert alert-{{$tipo}}" role="alert">
+
+    </div>
 </div>
