@@ -26,6 +26,9 @@ Route::view('/component','componentes')->name('rutacomponent');
 Route::get('/', [ControladorVista::class, 'home'])->name('rutainicio');
 // Route::get('/form', [ControladorVista::class, 'formulario'])->name('rutaform');
 Route::get('/consultar', [ControladorVista::class, 'consulta'])->name('rutaclientes');
+
+Route::get('/actualizar', [ControladorVista::class, 'actualizar'])->name('rutaactualizar');
+
 /*Metodo post*/
 Route::post('/enviarCliente', [ControladorVista::class, 'procesarCliente'])->name('rutaEnviar');
 
