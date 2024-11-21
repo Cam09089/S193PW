@@ -56,17 +56,34 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $cliente = DB::table('clientes')->where('id',$id)->first();
+
+        if(!$cliente){
+
+            return redirect()->route('rutaclientes')->whith('error','cliente no encontrado.');
+        }
+        return view('actualizarcliente', compact('cliente'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request, $id)
     {
-        //
+
+        $updated = DB::table('clientes')->where('id',$id)->update([
+            "nombre"=>$request->input('txtnombre'),
+            "apellido"=>$request->input('txtapellido'),
+            "correo"=>$request->input('txtcorreo'),
+            "telefono"=>$request->input('txttelefono'),
+            "updated_at"=> Carbon::now(),
+        ]);
+        if($updated){
+            session()->flash('exito','Se actualizo correctamente el cliente:' . $id);
+        }
+        else{
+            session()->flash('error','fallo la actualizacion del cliente');
+        }
+        return to_route('rutaclientes');
     }
 
     /**
@@ -74,6 +91,14 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleted=DB::table('cliente')->where('id', $id)->delete();
+
+        if ($deleted){
+            session()->flash('exito','Se elimino el cliente:' . $id);
+        }
+        else{
+            session()->flash('errror','Fallo al eliminar el cliente');
+        }
+        return to_route('rutaclientes');
     }
 }

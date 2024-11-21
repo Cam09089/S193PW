@@ -9,14 +9,14 @@
   
 
 <div class="container mt-5 col-md-6">
-  @if(session('exito'))
+  <!-- @if(session('exito'))
 
     <x-Alert tipo="success">{{ session('exito') }}</x-Alert>
     @endif
 
     @session('exito')
     <x-Alert tipo="warning">{{ $value }}</x-Alert>
-    @endsession
+    @endsession -->
 
     @session('exito')
     {! <script> 
@@ -36,7 +36,7 @@
 
     <div class="card-body text-justify ">
 
-      <form action="{{route('rutaEnviar')}}" method="POST">
+      <form action="{{ route('rutacrear}" method="POST">
         @csrf
 
         <div class="mb-3">

@@ -2,6 +2,28 @@
 @extends('layouts.plantilla') <!-- de donde se hereda -->
 @section('contenido') <!-- limitar el contenido, de donde viene -->
 
+
+@if(session('exito'))
+        <script>
+            Swal.fire({
+                title: "¡Exito!",
+                text: "{{{ session('exito') }}}",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            });
+        </script>
+    @endif
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                title: "¡Error!",
+                text: "{{{ session('error') }}}",
+                icon: "error",
+                confirmButtonText: "Aceptar",
+            });
+        </script>
+    @endif
+
     {{-- Inicia tarjetaCliente --}}
 <div class="container mt-5 col-md-8">
 
@@ -21,8 +43,17 @@
 
     <div class="card-footer text-muted">
       
-      <a type="submit" class="btn btn-warning btn-sm" href="{{route('rutaactualizar')}}">{{__('Actualizar')}}</a>
-      <button type="submit" class="btn btn-danger btn-sm">{{__('Eliminar')}}</button>
+      <a type="submit" class="btn btn-warning btn-sm" href="{{ route('rutaeditar',$cliente->id) }}">{{__('Editar')}}</a>
+
+      <!-- Para eliminar -->
+      <form action="{{route('rutaeliminar',$cliente->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Seguro que quiere eliminar el cliente?')">
+          {{__('Eliminar')}}
+        </button>
+
+      </form>
     </div>
 
   </div>
