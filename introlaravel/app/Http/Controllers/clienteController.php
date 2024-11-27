@@ -91,7 +91,7 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        $deleted=DB::table('cliente')->where('id', $id)->delete();
+        $deleted=DB::table('clientes')->where('id', $id)->delete();
 
         if ($deleted){
             session()->flash('exito','Se elimino el cliente:' . $id);

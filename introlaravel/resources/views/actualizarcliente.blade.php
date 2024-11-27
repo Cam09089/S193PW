@@ -11,26 +11,30 @@
 <div class="container mt-5 col-md-6">
   
 @if(session('exito'))
-<script>
-    Swal.fire({
-        title: "¡Éxito!",
-        text: "{{ session('exito') }}",
-        icon: "success",
-        confirmButtonText: "Aceptar"
-    });
-</script>
-@endif
-@if(session('error'))
-<script>
-    Swal.fire({
-        title: "¡Error!",
-        text: "{{ session('error') }}",
-        icon: "error",
-        confirmButtonText: "Aceptar"
-    });
-</script>
-@endif
 
+    {! <script> 
+      Swal.fire({
+     title: "Se actualizo con exito",
+    text: "{{ session('exito') }}",
+    icon: "success"
+    confirmButtonText: "Aceptar",
+
+});
+    </script> !}
+    @endif
+
+    @if(session('exito'))
+
+    <script> 
+      Swal.fire({
+     title: "Ocurrio un error al intentar actualizar",
+    text: "{{ session('exito') }}",
+    icon: "success"
+    confirmButtonText: "Aceptar",
+
+});
+    </script> 
+    @endif
 
 <div class="card font-monospace">
 
@@ -40,7 +44,7 @@
 
     <div class="card-body text-justify ">
 
-      <form action="{{ route('rutaactualizarcliente', $cliente->id) }}" method="POST">
+      <form action="{{ route('rutaactualizar', $cliente->id) }}" method="POST">
         @csrf
         @method('PUT')
 

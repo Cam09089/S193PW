@@ -43,7 +43,7 @@
 
     <div class="card-footer text-muted">
       
-      <a type="submit" class="btn btn-warning btn-sm" href="{{ route('rutaeditar',$cliente->id) }}">{{__('Editar')}}</a>
+      <a type="submit" class="btn btn-warning btn-sm" href="{{ route('rutaeditar',$cliente->id) }}">{{__('Actualizar')}}</a>
 
       <!-- Para eliminar -->
       <form action="{{route('rutaeliminar',$cliente->id)}}" method="POST">

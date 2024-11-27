@@ -25,11 +25,11 @@
             <a class="nav-link" aria-current="page" href="{{ route('rutainicio') }}" >{{__('Inicio')}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}" href="{{ route('rutaform') }}" >{{__('Registro Clientes')}} </a>
+            <a class="nav-link {{ request()->routeIs('cliente.create')?'text-warning':'' }}" href="{{ route('cliente.create') }}" >{{__('Registro Clientes')}} </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('rutaclientes')?'text-warning':'' }}" href="{{ route('rutaclientes') }}">{{__('Consulta Clientes')}} </a>
-          </li>
+            <a class="nav-link {{ request()->routeIs('cliente.index')?'text-warning':'' }}" href="{{ route('cliente.index') }}">{{__('Consulta Clientes')}} </a>
+          </li>-
         </ul>
       </div>
     </div>

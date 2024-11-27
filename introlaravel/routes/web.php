@@ -27,14 +27,14 @@ Route::get('/', [ControladorVista::class, 'home'])->name('rutainicio');
 // Route::get('/form', [ControladorVista::class, 'formulario'])->name('rutaform');
 Route::get('/consultar', [ControladorVista::class, 'consulta'])->name('rutaclientes');
 
-
 /*Metodo post*/
 Route::get('/enviarCliente', [ControladorVista::class, 'procesarCliente'])->name('rutaEnviar');
 
 // rutas para clientes
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');
-Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutacrear');
-Route::get('/cliente/{$id}/edit', [clienteController::class, 'edit'])->name('rutaeditar');
-Route::put('cliente/{id}', [clienteController::class, 'update'])->name('rutaactualizarcliente');
-Route::post('/procesarCliente', [clienteController::class, 'store']);
+Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaform');
+Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
+Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('rutaeditar');
+Route::put('cliente/{id}', [clienteController::class, 'update'])->name('rutaactualizar');
+// Route::post('/procesarCliente', [clienteController::class, 'store']);
 Route::delete('/cliente/{id}',[clienteController::class, 'destroy'])->name('rutaeliminar');
